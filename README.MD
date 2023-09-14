@@ -24,22 +24,6 @@ Use o comando ```docker exec -it teste_cogum_api bash```.
 Ele te dará acesso ao terminal interativo do container criado pelo compose, que está rodando em segundo plano.
 Instale as dependências "Caso existam" com ```npm install```
 
-:warning: Atenção :warning: Caso opte por utilizar o Docker, TODOS os comandos disponíveis no package.json ( npm run dev) devem ser executados DENTRO do container, ou seja, no terminal que aparece após a execução do comando docker exec citado acima.
-
-:warning: Atenção :warning: O git dentro do container não vem configurado com suas credenciais. Faça os commits fora do container, ou configure as suas credenciais do git dentro do container.
-
-:warning: Atenção :warning: Não rode o comando npm audit fix! Ele atualiza várias dependências do projeto, e essa atualização gera conflitos com o avaliador.
-
-:warning: Atenção :warning: Caso você esteja usando macOS e ao executar o docker-compose up -d se depare com o seguinte erro:
-
-```bash
-The Compose file './docker-compose.yml' is invalid because:
-Unsupported config option for services.db: 'platform'
-Unsupported config option for services.node: 'platform'
-```
-
-
-
 
 #### Fazer get hello
 ```http
