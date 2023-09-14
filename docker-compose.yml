@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: teste_cogum_api_db
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      
+
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  
+  
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: teste_cogum_api
+
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
